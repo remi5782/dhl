@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import CartContainer from './containers/CartContainer';
+import Routes from './routes';
 
 function App() {
   return (
     <div className="App">
-      <CartContainer/>
+      <Routes></Routes>
     </div>
   );
 }
