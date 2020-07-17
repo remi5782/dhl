@@ -1,22 +1,12 @@
-import React from 'react';
-import { ListGroup, Container, Button, Col, Row } from 'react-bootstrap';
+import React,{useState} from 'react';
+import { Container } from 'react-bootstrap';
 import CartItem from './CartItem';
 
-export default function CartList({ items }) {
 
+export default function CartList({ cartItems }) {
     return (
         <Container fluid>
-            <CartItem/>
-            <CartItem/>
-            {/* {items.map(item=> <CartItem item={item} key={item.id}/>)} */}
-            <Row>
-                <Col sm="6" lg="6" xs="6">
-                <Button variant="primary">Add Income</Button>
-                </Col>
-                <Col sm="6" lg="6" xs="6">
-                <Button variant="primary">Add Spending</Button>
-                </Col>
-            </Row>
+            {cartItems.map(item=> <CartItem key={item.key} item={item}/>)}
         </Container>
     )
 

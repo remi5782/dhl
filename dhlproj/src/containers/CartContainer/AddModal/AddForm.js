@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
-import {Form} from 'react-bootstrap';
-import { useReducer} from 'react-redux';
-import {addExpense, addEarnings} from './action';
+import {Form, Button} from 'react-bootstrap';
+import { useDispatch} from 'react-redux';
+import {addItem} from '../action';
 export default function AddForm({title}){
-
-    const [state, dispatch] = useReducer(reducer, initialState);
+  const dispatch = useDispatch();
     const [formData, setFormData] = useState({price: '', date: '', description: ''});
-    handleChange=(e)=>{
-        setFormData(prevState=>({
+    function handleChange(e){
+      const {name, value} = e.target;
+        setFormData((prevState)=>({
             ...prevState,
-            [e.target.name] : e.target.value
+            [name] : value
         }))
     }
-    handleSubmit=()=>{
-        dispatch((formData)=> addExpense({id: Math.random(),...formData}))
+    const handleSubmit = ()=>{
+      
+        dispatch(addItem({id: Math.round(Math.random()*345),type: "earning",...formData}))
     }
     return (<Form>
         <Form.Group controlId="formBasicPrice">
@@ -37,7 +38,7 @@ export default function AddForm({title}){
             Please enter the Description
           </Form.Text>
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleSubmit}>
+        <Button variant="primary"  onClick={handleSubmit}>
     Submit
   </Button>
       </Form>)

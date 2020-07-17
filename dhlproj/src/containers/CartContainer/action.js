@@ -1,12 +1,6 @@
-export const addExpense = (expense) => async dispatch => {
-    dispatch({type: "ADD_EXPENSE", payload: expense})
+export const addItem = (item) => async dispatch => {
+    dispatch({type: "ADD_ITEM", payload: item})
 }
-export const addEarning = (earning) => async dispatch => {
-    dispatch({type: "ADD_EARNING", payload: earning})
-}
-export const deleteExpense = (expense) => async dispatch => {
-    dispatch({type: "DELETE_EXPENSE", payload: expense})
-}
-export const deleteEarning = (earning) => async dispatch => {
-    dispatch({type: "DELETE_EARNING", payload: earning})
+export const deleteItem = (item) => async dispatch => {
+    dispatch({type: "DELETE_ITEM", payload: item})
 }
