@@ -1,0 +1,2 @@
+### This project is created for a simple Shopping Cart with the help of React Components and the state of the application has been maintained using the store using the concept of creatContext of react and React Hooks
+Usage of Duct Type Structuring across the UI 
