@@ -1,19 +1,19 @@
-import React, {useState, useEffect} from 'react';
-import {Modal, Button} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 import AddForm from './AddForm';
 
-export default function AddModal({title, open, setOpen }){
-    const [show, setShow] = useState(open);
+export default function AddModal({ title, open, setOpen, handleAdd }) {
+  const [show, setShow] = useState(open);
 
-  const handleClose = () => {setShow(false);setOpen(false);};
+  const handleClose = () => { setShow(false); setOpen(false); };
 
   return (
     <>
-      <Modal show={show}  onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-  <Modal.Title>ADD {title.toUpperCase()}</Modal.Title>
+          <Modal.Title>ADD {title.toUpperCase()}</Modal.Title>
         </Modal.Header>
-        <Modal.Body><AddForm title={title}/></Modal.Body>
+        <Modal.Body><AddForm handleAdd={handleAdd} title={title} setOpen={setOpen} /></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

@@ -1,6 +1,6 @@
 import React from 'react';
-export default function(){
+export default function () {
     return (<>
-    <h2>Welcome !...</h2>
+        <h2>Welcome !...</h2>
     </>)
 }
